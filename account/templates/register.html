@@ -1,0 +1,71 @@
+{% extends 'master.html'%}
+{% load static %}
+
+{%block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    input[type=password]{
+        background: #ffffff;
+        padding: 6px 12px;
+        border: 1px solid grey;
+        display: block;
+        border-radius: 5px;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+
+    }
+    ul{
+        
+        font-size: 10px;
+
+    }
+    .helptext{
+        text-align: left;
+        font-size: 10px;
+    }
+</style>
+</head>
+<body class="bg-black">
+    <div class="container text-light text-center " style="padding-top: 50px;">
+
+        <div class="row justify-content-center">
+            <div class="card col-sm-6 text-dark" style="padding:25px;">
+                <div class="card-title">
+                    <h3>Welcome To <span style="color: rgb(238, 73, 62)">Tech</span><span style="color: rgb(114, 114, 114)">SOFT</span></h3>
+                    <p>Register here</p>
+                </div>
+                <div class="card-body p-5">
+                    <form method="post" enctype="multipart/form-data">
+                        {%csrf_token%}
+                        <table class="table table-borderless">
+                            <tr>
+                                <td >{{data.as_table}}</td>
+                            </tr>
+                            <!---->
+                            
+                            </table>
+                            <div  class="m-1"><div class=" text-dark p-2"><input type="checkbox" value="False" required >  I'm agreed provided details are correct.</div><br>
+                            <input type="submit" value="Register" class="btn btn-danger col-3" >
+                        </div>
+                    </form>                
+                </div>
+                
+              </div>
+        </div>      
+    </div>
+</body>
+</html>
+{%endblock%}

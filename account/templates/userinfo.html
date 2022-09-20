@@ -1,0 +1,50 @@
+{% extends 'master.html' %}
+{%load static%}
+
+{%block body%}
+<body class="bg-black">
+<div class="container-fluid" style="padding: 50px;">
+    <div class="row">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="justify-content-end">Account</h5>
+            </div>
+        </div>
+        {% for i in user %}
+        <div class="card m-2" style="width: 18rem; height:30rem;">
+            <div class="card-header">
+              <h4>{{user.id}}</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Write blog</li>
+              <li class="list-group-item">View blog</li>
+              <li class="list-group-item">Update Profile</li>
+            </ul>
+          </div>
+
+          <div class="card col-8 m-2" style="width: 80rem; height:50rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title fgggggggggggggggggggggggggggggggggggggggggggg</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        {%endfor%}
+
+
+    </div>
+</div>
+
+
+</body>
+
+{%endblock%}

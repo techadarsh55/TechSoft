@@ -1,0 +1,142 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block body %}
+<style>
+  @media screen and (min-width: 450px){
+    #leftside{
+     width:100%;
+   }
+}
+@media screen and (min-width: 990px){
+  #leftside{
+   width:16rem;
+ }
+}
+@media screen and (min-width: 1000px){
+  #leftside{
+   width:16rem;
+ }
+}
+
+@media screen and (max-width: 990px){
+  #centerside{
+   width:100%;
+ }
+}
+@media screen and (min-width: 1000px){
+#centerside{
+ width:800px;
+}
+}
+</style>
+<body dy class="bg-black">
+<div class="container-fluid justify-content-center" style="margin-top: 50px; margin-right: 15px;">
+  <h3 class="text-light text-center">Account Setting</h3>
+  <br>
+<div class="row align-content-center">
+    {%  for i in empdata %}
+    <div class="card bg-light mb-2 m-1" style="margin-inline-end: 12px; width:16rem">
+        <img src="{{i.avatar}}" class="card-img mt-1" loading="lazy" alt="profile photo" style="width:100% auto; height:250px;">
+        <div class="card-body">
+          <h4 class="card-title text-capitalize">{{i.first_name}} {{i.last_name}}</h4>
+          <p><b class="text-capitalize text-danger">{{i.job_profile}}</b></p>
+   
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" ><a href="imgedit/{{i.id}}" class="nav-link">Edit Profile</a></li>
+          <li class="list-group-item"><a href="create_blog" class="nav-link">Write blog</a></li>
+          <li class="list-group-item"><a href="see_all" class="nav-link">Review</a></li>                                      
+        </ul>
+        <div class="card-body">
+          <button type="button" class="collapsible btn btn-dark">Contact</button>
+          <a href="user_logout" class="btn btn-danger">Logout</a>
+        </div>
+      </div>
+    
+    <div class="card mb-3 m-1" style="width:680px" id="centerside">
+        <div class="row ">
+        <div class="col-md-12">
+            <div class="card-body">
+            <h5 class="card-title text-capitalize">Personal Information Settings</h5>
+            <hr>
+            <h6 class="text-danger p-2">Personal</h6>
+            <div class="row">
+                <div class="col">
+                    <h6>First name</h6>
+                  <input type="text" class="form-control" value="{{i.first_name}}" disabled aria-label="First name">
+                </div>
+                <div class="col">
+                    <h6>Last name</h6>
+                  <input type="text" class="form-control" value="{{i.last_name}}" disabled aria-label="Last name">
+                </div>
+                <div class="col">
+                    <h6>Phone</h6>
+                  <input type="text" class="form-control" value="{{i.phone}}" disabled aria-label="Last name">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col">
+                    <h6>Eamil Address</h6>
+                  <input type="text" class="form-control" value="{{i.email}}" disabled aria-label="First name">
+                </div>
+                <div class="col">
+                    <h6>Date Of Birth</h6>
+                  <input type="text" class="form-control" value="{{i.date_of_birth}}" disabled aria-label="Last name">
+                </div>
+               
+              </div>
+              <hr>
+              <h6 class="text-danger p-2">Company</h6>
+              <div class="row">
+                <div class="col">
+                    <h6>Job Title</h6>
+                  <input type="text" class="form-control" value="{{i.job_profile}}" disabled aria-label="First name">
+                </div>
+                <div class="col">
+                    <h6>Date Of Joined</h6>
+                  <input type="text" class="form-control" value="{{i.date_joined}}" disabled aria-label="Last name">
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                    <h6>UserName</h6>
+                  <input type="text" class="form-control" value="{{i.username}}" disabled aria-label="First name">
+                </div>
+                <div class="col">
+                    <h6>Report Manager</h6>
+                  <input type="text" class="form-control" value="{{i.report_manager}}" disabled aria-label="Last name">
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <hr>
+                <div class="col">
+                    
+                  <a href="edit/{{i.id}}"><button type="submit" class="btn btn-outline-success">Update Details</button></a>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    {%endfor%}
+    <div class="card border-success mb-3" style="margin-right: 2px; width:16rem" id="leftside">
+        <div class="card-header bg-transparent border-success"><h5 class="text-danger">All Post</h5></div>
+        <div class="card-body text-success">
+        {% for i in new_post %}
+        <ul class="list-group">
+          <li class="list-group-item m-1">{{i.title}}</li>
+        </ul>
+        {%endfor%}
+        </div>
+    </div>
+    </div>
+    
+</div>
+</div>
+</body>
+
+{%endblock%}

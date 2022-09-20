@@ -1,0 +1,70 @@
+{% extends 'master.html' %}
+{%load static%}
+
+{%block body%}
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            {% for i in blog %}
+            <div class="card text-bg-dark">
+                <img src="{{i.blog_image}}" class="card-img" loading="lazy" alt="postimage">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">{{i.title}}</h5>
+                  <p class="card-text">{{i.descriptions}}</p>
+                  <p class="card-text"><small>{{i.posttime}}</small></p>
+                </div>
+              </div>
+              {%endfor%
+
+        </div>
+            
+    </div>>
+    <div class="row justify-content-center text-dark" id="activity">
+      <div class="card p-2 m-4 bg-black" style="width: 25rem;">
+          <img src="{% static 'img/company_activity/savenature.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+          <div class="card-body">
+              <h4 class="text-light">Save Nature</h4>
+            <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <div class="card p-2 m-4" style="width: 25rem;">
+          <img src="{% static 'img/company_activity/diwali.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+          <div class="card-body">
+              <h4>Diwali Celebrations</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <div class="card m-4 p-2 bg-black" style="width: 25rem;">
+          <img src="{% static 'img/company_activity/christmas.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+          <div class="card-body">
+              <h4 class="text-light">Christmas Celebrations</h4>
+            <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <div class="card m-4 p-2 " style="width: 25rem;">
+          <img src="{% static 'img/company_activity/rnr.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+          <div class="card-body">
+              <h4>RNR</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <div class="card m-4 p-2 bg-black" style="width: 25rem;">
+          <img src="{% static 'img/company_activity/fun.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+          <div class="card-body">
+              <h4 class="text-light">Fun Activity</h4>
+            <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <div class="card m-4 p-2" style="width: 25rem;">
+          <img src="{% static 'img/company_activity/team.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+          <div class="card-body">
+              <h4>Team Building</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+</div>
+
+</body>
+
+{%endblock%}

@@ -1,0 +1,24 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" crossorigin="anonymous">
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechSOFT Technology</title>
+</head>
+<body>
+{% include 'navbar.html'%}
+
+{%block body%}
+
+{%endblock%}
+
+<script src="{% static 'js/boot.js'%}"></script>
+<script src="{% static 'js/p.js'%}"></script>
+{% include 'footer.html'%}
+
+</body>
+</html>

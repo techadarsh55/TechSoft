@@ -1,0 +1,178 @@
+{% extends 'master.html' %}
+{% load static %}
+
+<style>
+    #intro{
+        background: white;
+    }
+    @media screen and (max-width: 800px) {
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #activity{
+            justify-content: center;
+            gap: 2;
+            
+        }
+        .card{
+            width: 350x;
+        }
+      }
+</style>
+
+<!--home page coding here--->
+{% block body %}
+<body style="background: black;">
+<section id="intro" style="background: rgb(255, 252, 252); background-size: cover; height:690px; background-image: url({% static 'img/back2.jpg' %});" >
+    <div class="container text-center p-3">
+        <div class="row pt-lg-5">
+            <h1 style="font-size: 65px;">Welcome To <span style="color: rgb(238, 73, 62)">Tech</span><span style="color: rgb(247, 247, 247)">SOFT</span></h1>
+            <h6>TechSOFT provide the database management hub we have our cloud server and totally security<br> proof and don't need worried about data leaked.</h6>
+            <a href="" class="nav-link">
+            <button type="button" class="btn btn-outline-danger " value="Contact">Connect</button></a>
+        </div>
+    </div>
+</section>
+
+<style>
+    @media screen and (max-width: 800px) {
+        .business:img{
+            width: 350px auto;
+            height: 350px auto;
+        }
+    }
+</style>
+
+<section class='about_us'>
+    <div class="container mr-2 mt-5 text-center text-light">
+        <h1 class="text-capitalize text-opacity-25">Selected clients success stories</h1>
+        <hr>
+        <div class="row justify-content-center">
+            <div class=" mb-3" style="max-width: 540px;" style="background-image: url(https://blog.allplan.com/hubfs/iStock-1036020742_NEU_NEU.jpg); background-color: aqua;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'img/automation.jpg'%}" class="img-fluid rounded-start" alt="..." height="540px">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title">Automation
+                    </h4>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'img/healthcare.jpg'%}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title">Healthcare
+                    </h4>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-black">
+                <img src="{% static 'img/ai.jpg'%}" class="card-img" alt="..." height="300px">
+                <div class="card-img-overlay">
+                  <h2 class="card-title">Artificial Intelligence
+                </h2>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text">Devised an AI-powered platform that creates an organization's custom ontologies and knowledge graphs. The Ontology optimizes recommendations on a more connected basis making it easier to target customers with the content most relevant to them</p>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="socal-activity mt-5">
+    <div class="container-fluid mr-2 text-center text-light">
+        <div>
+            <h1 class="text-capitalize text-opacity-25">curriculum activities</h1>
+            <hr>
+        </div>
+        <div class="row justify-content-center text-dark" id="activity">
+            <div class="card p-2 m-4 bg-black" style="width: 25rem;">
+                <img src="{% static 'img/company_activity/savenature.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+                <div class="card-body">
+                    <h4 class="text-light">Save Nature</h4>
+                  <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <div class="card p-2 m-4" style="width: 25rem;">
+                <img src="{% static 'img/company_activity/diwali.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+                <div class="card-body">
+                    <h4>Diwali Celebrations</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <div class="card m-4 p-2 bg-black" style="width: 25rem;">
+                <img src="{% static 'img/company_activity/christmas.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+                <div class="card-body">
+                    <h4 class="text-light">Christmas Celebrations</h4>
+                  <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <div class="card m-4 p-2 " style="width: 25rem;">
+                <img src="{% static 'img/company_activity/rnr.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+                <div class="card-body">
+                    <h4>RNR</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <div class="card m-4 p-2 bg-black" style="width: 25rem;">
+                <img src="{% static 'img/company_activity/fun.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+                <div class="card-body">
+                    <h4 class="text-light">Fun Activity</h4>
+                  <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <div class="card m-4 p-2" style="width: 25rem;">
+                <img src="{% static 'img/company_activity/team.jpg'%}" class="card-img-top" alt="..." width="350" height="260">
+                <div class="card-body">
+                    <h4>Team Building</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+    </div>
+</div>
+</section>
+
+<section class="location">
+    <div class="container text-center text-light justify-content-center">
+        <h2 class="text-capitalize text-light">Office Locations</h2>
+        <hr>
+        <div class="row d-inline-flex">
+            
+            <div class="m-4 p-2" style="width: 25rem;">
+                <img src="{% static 'img/map.png'%}" class="img-top" alt="..." width="40px" height="40px">
+                <div class="card-body">
+                    <h4 class="text-danger">Headquarters in New York, USA</h4>
+                  <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="m-4 p-2" style="width: 25rem;">
+                <img src="{% static 'img/map.png'%}" class="img-top" alt="..." width="40px" height="40px">
+                <div class="card-body">
+                    <h4 class="text-danger">Headquarters in Navi Mumabi, India</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            
+        
+        </div>
+    </div>
+</section>
+
+</body>
+{% endblock %}

@@ -1,0 +1,49 @@
+
+{%load static%}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" crossorigin="anonymous">
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechSOFT Technology</title>
+</head>
+<body>
+
+
+{%block body%}
+<body class="bg-black justify-content-center">
+  <div class="container-fluid mt-5">
+      <div class="row">
+        <form action="/see_all">
+          {% for i in data %}
+          <div class="col-12">
+              <div class="card">
+                <h2 class="card-header">{{i.title}}</h2>
+                <img src="http://127.0.0.1:8000/{{i.blog_image}}" class="card-img-top" alt="..." style="width: 100%; height:25rem">
+                <div class="card-body text-center">
+                                 
+                  <h6 class="card-text">{{i.descriptions}}</h6>
+                  <p class="card-text"><small>{{i.posttime}}</small></p>
+                </div>
+                <div class="card-footer">
+                  <a href="see_all"><button class="btn btn-primary">Back</button></a>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </form>
+      </div>
+          
+  </div>
+{%endblock%}
+
+<script src="{% static 'js/boot.js'%}"></script>
+<script src="{% static 'js/p.js'%}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% extends 'master.html' %}
+{%load static%}
+
+{%block body%}
+<style>
+        input[type=text]{
+            width:100%;
+            margin: 12px;
+        }
+        #id_Description{
+            width:100%;
+            margin: 12px;
+        }
+        label{
+            color:rgb(32, 32, 32);
+            font-weight: bold;
+            font-size: medium;
+    
+    
+        }
+</style>
+<body class="bg-black">
+    <div class="container">
+        <div class="row">
+            <div class="card">
+            <div class="card-header">
+                <h2 class="text-start text-bg-danger p-4">New Blog here...</h2>
+            </div>
+            <div class="card-body p-2 mt-1" style="height: 750px;">
+                
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  
+                        
+                            <p class="col-8 text-capitalize">{{blog.as_p}}</p>
+                         
+                                <input type="submit" class="btn btn-danger col-4" value="Post">
+                           
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+        document.getElementById('id_posttime').value= Date();
+        }
+        </script>
+
+</body>
+{%endblock%}

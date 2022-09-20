@@ -1,0 +1,106 @@
+{% extends 'master.html' %}
+{%load static%}
+
+{%block body%}
+<style>
+    input[type=text]{
+        background: #ffffff;
+        padding: 6px 12px;
+        border: 1px solid grey;
+        display: inline;
+        border-radius: 5px;
+        margin: 10px auto;
+        color: brown;
+
+        
+    
+   
+    }
+</style>
+<body class="bg-black">
+    <div class="container-fluid">
+        <div class="row sticky-md-top">
+
+            <div class=" m-2">
+                <div class="card">
+                    <h4 class="card-header">Search here...</h4>
+                    
+                       
+                    <div class="card-header text-success p-0 align-content-center text-center" style="font-size: 21px;"> Total Employees<img src="{% static 'img/users.png'%}" width="40px"> = {{count}}</div>  
+                    <form method="get">
+                    <div class="p-3">
+                       
+                            <div class="p-1 justify-content-start">{{filters.form}}</div>
+                        
+                    </div>
+                    <div class="card-footer justify-content d-sm-flex">
+                        <button class="btn btn-danger col-2 align-content-start" type="submit">Search</button>
+                                            
+                    </div>
+                </form>
+                </div>  
+            </div>
+    
+        </div>
+    </div>    
+        
+        
+
+    <div class="container-fluid p-5">
+
+        <div class="row">
+            
+            <div class="card bg-black m-2" style="overflow-x:auto;">
+                <table class="table table-dark table-striped table-hover table-sm p-2">
+                    <thead class="table-light">
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">FirstName</th>
+                            <th scope="col">LastName</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Phone No</th>
+                            <th scope="col">City</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Date Joined</th>
+                            <th scope="col">JobTitle</th>
+                            <th scope="col">Report Manager</th>
+                            <th scope="col">Profiles</th>
+                            <th>Action</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        {%for i in data %}
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td class="text-capitalize">{{i.first_name}}</td>
+                            <td class="text-capitalize">{{i.last_name}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.username}}</td>
+                            <td>{{i.phone}}</td>
+                            <td class="text-capitalize">{{i.city}}</td>
+                            <td>{{i.date_of_birth}}</td>
+                            <td>{{i.gender}}</td>
+                            <td><span>{{i.date_joined}}</span></td>
+                            <td class="text-capitalize">{{i.job_profile}}</td>
+                            <td>{{i.report_manager}}</td>
+                            <td><img src="{{i.avatar}}" class="img-fluid" loading="lazy" alt="upload image" width="50px" height="50px"  style="border-radius: 65px; height:50px; background-image: url('https://cdn-icons-png.flaticon.com/512/149/149071.png');"></td>
+                            <td>
+                                <a href="edituser/{{i.id}}" class="nav-link text-success">Update</a>
+                                <a  href="deleteuser/{{i.id}}" class="nav-link">Remove</a>
+                            </td>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+            
+            
+        </div>
+     </div> 
+</body>
+
+
+{%endblock%}

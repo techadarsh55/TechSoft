@@ -1,0 +1,42 @@
+{% extends 'master.html' %}
+{%load static%}
+
+{%block body%}
+<body class="bg-black">
+    <div class="container">
+      <div class="card card-header">
+        <h3 class="text-light">Latest Blog Posts</h3>
+      </div>
+        <div class="row">
+            
+            
+              <div class="row row-cols-2">
+                {% for i in blog %}
+                
+                <div class="col-3">
+                  <div class="card mt-2" style="height: 400px;">
+                    <h6 class="card-header">{{i.title}}</h6>
+                    <img src="{{i.blog_image}}" class="card-img-top" alt="..." style="width: 25.33rem auto; height:17rem">
+                    <div class="card-body">
+                      
+                      <p class="card-text"><small>{{i.posttime}}</small></p>
+                    </div>
+                    <div class="card-footer">
+                      <a href="view_blog_page/{{i.id}}"><button class="btn btn-danger">Read More</button></a>
+                    </div>
+                  </div>
+                </div>
+              
+                {%endfor%}
+                </div>
+                
+        </div>
+
+        
+    </div>    
+
+
+
+</body>
+
+{% endblock %}

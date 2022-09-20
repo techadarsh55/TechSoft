@@ -1,0 +1,23 @@
+{% extends 'master.html'%}
+{% load static %}
+
+{%block body %}
+
+<body class="bg-black">
+    <div class="container mt-5">
+        <div class="row">
+    <form method="post" enctype="multipart/form-data">
+        
+        <div class="card card-body justify-content-center">
+            <h3 class="text-capitalize text-danger ">Export All User</h3>
+            <button type="button" class="btn btn-success col-3 text-light"><a href="export_data_csv" class="nav-link text-light" >download</a></button>
+        </div>
+        
+
+    </form>
+</div>
+</div>
+
+</body>
+
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{%block body %}
+
+<body>
+    
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div class="card card-header">
+            <h5 class="text-capitalize text-danger text-center">upload the profile image</h5>
+        </div>
+        <div class="card-body">
+          
+            <button  type="submit" class="btn btn-toolbar"></button>
+        </div>
+        <div class="card-footer">
+            <button href="" type="submit" class="btn btn-primary">Upload</button>
+        </div>
+
+    </form>
+
+
+</body>
+
+{%endblock%}
